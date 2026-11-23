@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Nickelodeon Rugrats - Search for Reptar"
+id = "SLUS-00650"
+players = 1
+exe = "disc/slus_006.50"
+disc = "disc/Nickelodeon Rugrats - Search for Reptar (USA).cue"
+discs = ["disc/Nickelodeon Rugrats - Search for Reptar (USA).cue"]
+disc_serials = ["SLUS-00650"]
+load_address = "0x80010000"
+entry_pc = "0x800977E8"
+text_size = "0x000B5000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Nickelodeon Rugrats - Search for Reptar (USA).bin"
+cue_name = "Nickelodeon Rugrats - Search for Reptar (USA).cue"
+boot_exe = "slus_006.50"
+known_sizes = [608424768]
+known_md5 = [
+  "bcfe8f71e19ea87a18a243d60ee1cf88",
+]
+known_sha1 = [
+  "b547ef42310a5b04ccfd62d12aa9c41af1c5d6f5",
+]
+known_crc32 = [
+  "f7bbe7de",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Nickelodeon Rugrats - Search for Reptar Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "f6a48e71c81812a15e83e3d35e03580b7757525ad36e86b0feba6c78c4094ba7"

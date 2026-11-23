@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "nickelodeon-rugrats-search-for-reptar-psx",
+  "name": "Nickelodeon Rugrats - Search for Reptar",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "nickelodeon-rugrats-search-for-reptar-recomp",
+  "rom_identity": {
+    "crc32": [
+      "f7bbe7de"
+    ],
+    "md5": [
+      "bcfe8f71e19ea87a18a243d60ee1cf88"
+    ],
+    "sha1": [
+      "b547ef42310a5b04ccfd62d12aa9c41af1c5d6f5"
+    ],
+    "disc_serials": [
+      "SLUS-00650"
+    ],
+    "sizes": [
+      608424768
+    ],
+    "filenames": [
+      "Nickelodeon Rugrats - Search for Reptar (USA).cue",
+      "Nickelodeon Rugrats - Search for Reptar (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "f6a48e71c81812a15e83e3d35e03580b7757525ad36e86b0feba6c78c4094ba7"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/nickelodeon-rugrats-search-for-reptar-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "nickelodeon-rugrats-search-for-reptar-*-windows-x64.zip",
+      "linux-x64": "nickelodeon-rugrats-search-for-reptar-*-linux-x64.zip",
+      "macos-arm64": "nickelodeon-rugrats-search-for-reptar-*-macos-arm64.zip",
+      "macos-x64": "nickelodeon-rugrats-search-for-reptar-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "nickelodeon_rugrats_search_for_reptar.exe",
+    "linux": "nickelodeon_rugrats_search_for_reptar",
+    "macos": "nickelodeon_rugrats_search_for_reptar"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/nickelodeon-rugrats-search-for-reptar-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
